@@ -14,11 +14,12 @@ export default function handler(req, res) {
       return res.status(403).send("Verification failed")
     }
   } else if (req.method === "POST") {
-    // Message events from Facebook
     const body = req.body
+    console.log("📩 Webhook Event:", JSON.stringify(req.body, null, 2));
     console.log("Webhook event received:", body)
     return res.status(200).send("EVENT_RECEIVED")
   } else {
     res.status(405).send("Method not allowed")
   }
 }
+

@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-  const VERIFY_TOKEN = "EAA54QgkWkaUBPQBPQgppMC7RcRHHxBZBduVt6dsa4J5s5Luh5uSN3FEiiby1QyVJmeZALcJBuyCrd5iiQ4FQYLvXn98mxeElGq2BbqkqrnZAW2HeTAY0JFommuwEonLNrsZBZCsZCDRsfKp4ZCGGG4EFccZBtMgCP1kfZAy6a5jQkdLKTLOr81EQB2ZBMX0G5kMfP1BrZCseEXu"; // choose your own secret token
+  const VERIFY_TOKEN = "tijani__secret__token";
 
   if (req.method === "GET") {
     // Verification request from Facebook
@@ -22,3 +22,4 @@ export default function handler(req, res) {
     res.status(405).send("Method not allowed");
   }
 }
+

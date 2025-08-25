@@ -12,6 +12,12 @@ export default function handler(req, res) {
     const token = req.query["hub.verify_token"]
     const challenge = req.query["hub.challenge"]
 
+    console.log("Facebook verification request:")
+    console.log("- mode:", mode)
+    console.log("- token:", token)
+    console.log("- challenge:", challenge)
+    console.log("- All query params:", JSON.stringify(req.query, null, 2))
+
     if (mode === "subscribe" && token === VERIFY_TOKEN) {
       console.log("WEBHOOK_VERIFIED")
       return res.status(200).send(challenge)
